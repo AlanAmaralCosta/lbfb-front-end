@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+{% block index %}
+        {% include 'components/notification.html' %}
+        {% if request.path == "/" %}
+                {% include 'components/content-index.html' %}
+        {% elif request.path == "/clubes" %}
+                {% include 'components/clubs-list.html' %}
+        {% elif request.path == "/sobre" %}
+                {% include 'components/content-sobre.html' %}
+        {% elif request.path == "/atualizar" %}
+                {% include 'components/add-club.html' %}
+        {% endif %}
+        <!-- {% include 'components/clubs-list.html' %} -->
+{% endblock %}

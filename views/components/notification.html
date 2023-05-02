@@ -1,0 +1,17 @@
+{% with messages = get_flashed_messages(with_categories=True) %}
+  {% if messages %}
+      {% for category, message in messages %}
+        <div class='alert alert-{{ category }} alert-dismissible fade show text-center' role='alert'>
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <script>
+            setTimeout(function() {
+              document.querySelector('.alert').classList.remove('show');
+            }, 5000);
+        </script>
+      {% endfor %}
+  {% endif %}
+{% endwith %}
